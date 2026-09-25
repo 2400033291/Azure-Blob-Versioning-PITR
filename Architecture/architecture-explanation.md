@@ -52,4 +52,4 @@ The overall flow of the architecture is:
 **User → Resource Group → Storage Account → Blob Container → Blob → Data Protection Features → Recovery**
 
 The protection features work together to provide data durability and recovery capabilities, while Lifecycle Management helps manage storage usage and cost.
-## Architecture Components
+
