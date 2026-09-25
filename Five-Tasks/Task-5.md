@@ -42,8 +42,10 @@ was used for the practical.
 
 The storage account provides blob storage and file storage services.
 
-The account was configured with standard storage and locally redundant storage (LRS).
+The account was configured with:
 
+Performance: Standard
+Redundancy: Locally Redundant Storage (LRS)
 3. Manage Blob Storage
 
 A private blob container named:
@@ -104,13 +106,15 @@ VM	vm-network-lab
 Storage Account	blobrestoreproject2026
 Blob Container	project-data
 Blob	travel-data.txt
-SAS Authentication	Enabled/Generated
+SAS Authentication	Generated
 Azure Files Share	lab-fileshare
 File Protocol	SMB
 File Access Tier	TransactionOptimized
 Result
 
-The Azure Virtual Machine was successfully deployed. The Storage Account and blob storage were configured and used for storing project data.
+The Azure Virtual Machine was successfully deployed.
+
+The Azure Storage Account and blob storage were configured and used for storing project data.
 
 Storage access was controlled using a Shared Access Signature with restricted permissions and HTTPS-only access.
 
