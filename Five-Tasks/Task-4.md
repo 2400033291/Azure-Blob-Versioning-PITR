@@ -14,6 +14,8 @@ To configure an Azure Virtual Network, deploy a Virtual Machine into the VNet, c
 - **Subnet Address Range:** `10.0.0.0/24`
 - **Network Security Group:** `nsg-vm`
 - **Virtual Machine:** `vm-network-lab`
+- **Operating System:** Ubuntu Server 24.04 LTS
+- **Username:** `azureuser`
 
 ## Procedure
 
@@ -29,7 +31,7 @@ The following configuration was used:
 - **Subnet Range:** `10.0.0.0/24`
 - **DNS:** Azure-provided DNS
 
-The Virtual Network was successfully created in the `rg-network-lab` Resource Group.
+The Virtual Network was created in the `rg-network-lab` Resource Group.
 
 ### 2. Configure the Subnet
 
@@ -41,22 +43,22 @@ The subnet uses the address range:
 10.0.0.0/24
 ```
 
-This subnet provides private IP addresses to resources deployed into it.
+This subnet provides private IP addresses to resources deployed into the Virtual Network.
 
 ### 3. Deploy a Virtual Machine into the VNet
 
-A Virtual Machine was deployed into the `vnet-lab` Virtual Network.
+A Virtual Machine named `vm-network-lab` was deployed into the existing Virtual Network.
 
 The VM configuration included:
 
 - **VM Name:** `vm-network-lab`
-- **Operating System:** Ubuntu Linux
+- **Operating System:** Ubuntu Server 24.04 LTS
 - **Virtual Network:** `vnet-lab`
 - **Subnet:** `subnet-vm`
 - **Authentication:** SSH public key
 - **Username:** `azureuser`
 
-The VM was connected to the previously created Virtual Network and subnet.
+The VM was successfully deployed into the `vnet-lab` Virtual Network and `subnet-vm` subnet.
 
 ### 4. Configure Private and Public IP Addresses
 
@@ -64,7 +66,7 @@ The VM network interface was configured with IP addressing.
 
 The VM receives a **private IP address** from the `subnet-vm` address range for communication within the Virtual Network.
 
-A **public IP address** was also associated with the VM to allow required external connectivity, such as SSH access.
+A **public IP address** named `vm-network-lab-ip` was associated with the VM to provide external network connectivity and SSH access.
 
 The private and public IP addresses were verified through the VM networking configuration.
 
@@ -76,27 +78,25 @@ A Network Security Group named:
 nsg-vm
 ```
 
-was used to control inbound and outbound network traffic for the VM.
+was associated with the VM network interface.
 
-An inbound rule allowing SSH traffic on port `22` was configured so that the VM could be accessed securely using SSH.
+An inbound rule allowing SSH traffic on port `22` was configured to permit SSH access to the Ubuntu VM.
 
-The Network Security Group was associated with the VM's network interface during deployment.
+The Network Security Group controls inbound and outbound network traffic for the VM.
 
 ### 6. Configure Azure DNS Internal Name Resolution
 
 The Virtual Network was configured to use **Azure-provided DNS**.
 
-Azure-provided DNS can resolve Azure resource names within the Azure networking environment.
+Azure-provided DNS supports name resolution for Azure resources within the Azure networking environment.
 
-The DNS configuration was verified from the Virtual Network settings.
+The DNS configuration was verified through the Virtual Network settings.
 
 ### 7. Configure External DNS Name Resolution
 
-External DNS name resolution allows resources to resolve public domain names through DNS.
+The VM has internet connectivity through its public network configuration and can use DNS resolution to access external websites and services.
 
-The VM can use DNS resolution for accessing external services and websites through its network connection.
-
-Public DNS zone configuration was not required for the basic VM networking demonstration because no custom public domain was used in this practical.
+A custom public Azure DNS zone was not created because no custom domain name was required for this practical.
 
 ## Final Configuration
 
@@ -106,10 +106,11 @@ Public DNS zone configuration was not required for the basic VM networking demon
 - **Subnet:** `subnet-vm`
 - **Subnet Range:** `10.0.0.0/24`
 - **VM:** `vm-network-lab`
+- **Operating System:** Ubuntu Server 24.04 LTS
 - **NSG:** `nsg-vm`
+- **Public IP:** `vm-network-lab-ip`
 - **DNS:** Azure-provided DNS
 - **Private IP:** Assigned from the VNet subnet
-- **Public IP:** Associated with the VM
 
 ## Result
 
