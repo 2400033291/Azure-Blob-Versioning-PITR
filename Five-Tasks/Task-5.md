@@ -1,41 +1,36 @@
-# Task 5 – Azure VM, Storage Account, Blob Storage, Authentication, and Azure Files
-
-## Objective
+Task 5 – Azure VM, Storage Account, Blob Storage, Authentication, and Azure Files
+Objective
 
 To deploy an Azure Virtual Machine, configure an Azure Storage Account, manage blob storage, configure storage authentication and authorization, and create an Azure Files share.
 
-## Resources Used
+Resources Used
+Resource Group: rg-network-lab
+Virtual Machine: vm-network-lab
+Storage Account: blobrestoreproject2026
+Blob Container: project-data
+Blob: travel-data.txt
+Azure Files Share: lab-fileshare
+Procedure
+1. Deploy an Azure VM
 
-- **Resource Group:** `rg-network-lab`
-- **Virtual Machine:** `vm-network-lab`
-- **Storage Account:** `blobrestoreproject2026`
-- **Blob Container:** `project-data`
-- **Blob:** `travel-data.txt`
-- **Azure Files Share:** `lab-fileshare`
-
-## Procedure
-
-### 1. Deploy an Azure VM
-
-An Azure Virtual Machine named `vm-network-lab` was deployed in the `rg-network-lab` Resource Group.
+An Azure Virtual Machine named vm-network-lab was deployed in the rg-network-lab Resource Group.
 
 The VM was configured with:
 
-- **Operating System:** Ubuntu Server 24.04 LTS
-- **Authentication:** SSH public key
-- **Username:** `azureuser`
-- **Virtual Network:** `vnet-lab`
-- **Subnet:** `subnet-vm`
-- **Public IP:** `vm-network-lab-ip`
-- **Network Security Group:** `nsg-vm`
+Operating System: Ubuntu Server 24.04 LTS
+Authentication: SSH public key
+Username: azureuser
+Virtual Network: vnet-lab
+Subnet: subnet-vm
+Public IP: vm-network-lab-ip
+Network Security Group: nsg-vm
 
 The VM was successfully deployed and connected to the configured Virtual Network.
 
-### 2. Create and Configure a Storage Account
+2. Create and Configure a Storage Account
 
 The existing Azure Storage Account:
 
-```text
 blobrestoreproject2026
 
 was used for the practical.
