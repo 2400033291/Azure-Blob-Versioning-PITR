@@ -119,15 +119,3 @@ An Azure Files share was also successfully created using the SMB protocol.
 Conclusion
 
 This task demonstrated Azure Virtual Machine deployment, Azure Storage Account configuration, blob management, secure storage access using SAS, and Azure Files configuration.
-
-
-### Then commit it
-
-In GitHub:
-
-**Task-5.md → Edit ✏️ → paste the content → Commit changes**
-
-Use this commit message:
-
-```text
-Add Task 5 Azure VM and Storage Configuration
